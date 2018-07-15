@@ -97,7 +97,7 @@ $(function() {
             });
         });
 
-        it('should have at least 1 entry', function(done){
+        it('there is at least 1 entry', function(done){
             expect(feed_container.children().length).not.toBeLessThan(1);
             done();
         });
