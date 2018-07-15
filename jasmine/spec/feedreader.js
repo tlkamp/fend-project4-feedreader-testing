@@ -89,7 +89,6 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         const feed_container = $('.feed');
-        const call_done = () => done();
         
         beforeEach(function(done){
             loadFeed(0, function(){
@@ -113,12 +112,12 @@ $(function() {
         let second_feed;
 
         beforeEach(function(done){
-            loadFeed(0, function(){
+            loadFeed(3, function(){
                 first_feed = $('.feed').html();
                 done();
             });
 
-            loadFeed(1, function(){
+            loadFeed(4, function(){
                 second_feed = $('.feed').html();
                 done();
             });
