@@ -35,7 +35,7 @@ $(function() {
             allFeeds.forEach(feed => {
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBe('');
-            })
+            });
         });
 
 
