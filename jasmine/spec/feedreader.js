@@ -89,6 +89,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         const feed_container = $('.feed');
+        const call_done = () => done();
         
         beforeEach(function(done){
             loadFeed(0, function(){
@@ -108,5 +109,24 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        let first_feed;
+        let second_feed;
+
+        beforeEach(function(done){
+            loadFeed(0, function(){
+                first_feed = $('.feed').html();
+                done();
+            });
+
+            loadFeed(1, function(){
+                second_feed = $('.feed').html();
+                done();
+            });
+        });
+
+        it('should not result in the same content', function(done){
+            expect(first_feed).not.toEqual(second_feed);
+            done();
+        });
     });
 }());
