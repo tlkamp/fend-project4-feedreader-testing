@@ -112,14 +112,27 @@ $(function() {
         let second_feed;
 
         beforeEach(function(done){
-            loadFeed(3, function(){
-                first_feed = $('.feed').html();
-                done();
-            });
+            loadFeed(0, function () {
+                first_feed = document.querySelector('.feed').innerHTML;
 
-            loadFeed(4, function(){
-                second_feed = $('.feed').html();
-                done();
+                /*
+                    I tried several versions of this function. 
+                    
+                    Having the load calls as 2 separate blocks and calling done(); twice immediately 
+                    invoked the 'it' below, so i was comparing HTML against 'undefined' and getting 
+                    false positives/negatives.
+
+                    Removing the done() call in one of the tests resulted in the test passing correctly
+                    on first load, but would pass erroneously if the indicies of either load function were 
+                    changed.
+
+                    Adding the second loadFeed call into the callback of the first, and then calling done()
+                    in the callback of the second loadFeed call produces the correct behavior.
+                */
+                loadFeed(1, function() {
+                    second_feed = document.querySelector('.feed').innerHTML;
+                    done();
+                });
             });
         });
 
