@@ -91,9 +91,7 @@ $(function() {
         const feed_container = $('.feed');
         
         beforeEach(function(done){
-            loadFeed(0, function(){
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('there is at least 1 entry', function(done){
