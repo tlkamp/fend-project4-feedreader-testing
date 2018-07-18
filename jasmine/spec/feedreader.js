@@ -116,6 +116,7 @@ $(function() {
             expect(() => loadFeed('0')).not.toThrow();
             expect(() => loadFeed(2.3)).not.toThrow();
             expect(() => loadFeed('1.1')).not.toThrow();
+            expect(() => loadFeed(allFeeds.length)).toThrow();
             expect(loadFeed).toThrow();
         });
     });

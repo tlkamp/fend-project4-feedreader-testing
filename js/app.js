@@ -42,7 +42,7 @@ function init() {
  */
  function loadFeed(id, cb) {
      id = parseInt(id);
-     if (id === NaN || id > allFeeds.length || id <= -1 || id === undefined) {
+     if (id === NaN || id >= allFeeds.length || id < 0 || id === undefined) {
          throw 'ID must be valid.';
      }
 
