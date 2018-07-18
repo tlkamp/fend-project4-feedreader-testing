@@ -145,6 +145,7 @@ $(function() {
             expect(() => loadFeed(-1)).toThrow();
             expect(() => loadFeed(99)).toThrow();
             expect(() => loadFeed(undefined)).toThrow();
+            expect(() => loadFeed('0')).toThrow();
         });
     });
 }());
