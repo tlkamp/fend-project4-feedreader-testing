@@ -113,7 +113,10 @@ $(function() {
             expect(() => loadFeed(-1)).toThrow();
             expect(() => loadFeed(99)).toThrow();
             expect(() => loadFeed(undefined)).toThrow();
-            expect(() => loadFeed('0')).toThrow();
+            expect(() => loadFeed('0')).not.toThrow();
+            expect(() => loadFeed(2.3)).not.toThrow();
+            expect(() => loadFeed('1.1')).not.toThrow();
+            expect(loadFeed).toThrow();
         });
     });
 }());

@@ -41,7 +41,8 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
-     if (typeof id != 'number' || id > allFeeds.length || id <= -1 || id === undefined) {
+     id = parseInt(id);
+     if (id === NaN || id > allFeeds.length || id <= -1 || id === undefined) {
          throw 'ID must be valid.';
      }
 
