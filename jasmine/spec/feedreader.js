@@ -37,7 +37,7 @@ $(function() {
             allFeeds.forEach(feed => {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe('');
-            })
+            });
         });
     });
 
@@ -48,20 +48,20 @@ $(function() {
             expect(body.classList).toContain('menu-hidden');
         });
 
-         it('can be toggled', function() {
+        it('can be toggled', function() {
             const button = $('.menu-icon-link');
             button.click();
             expect(body.classList).not.toContain('menu-hidden');
 
             button.click();
             expect(body.classList).toContain('menu-hidden');
-         });
+        });
     });
 
     describe('Initial Entries', function() {
 
         const feed_container = $('.feed');
-        
+
         beforeEach(function(done){
             loadFeed(0, done);
         });
@@ -82,14 +82,14 @@ $(function() {
                 first_feed = document.querySelector('.feed').innerHTML;
 
                 /*
-                    I tried several versions of this function. 
-                    
-                    Having the load calls as 2 separate blocks and calling done(); twice immediately 
-                    invoked the 'it' below, so i was comparing HTML against 'undefined' and getting 
+                    I tried several versions of this function.
+
+                    Having the load calls as 2 separate blocks and calling done(); twice immediately
+                    invoked the 'it' below, so i was comparing HTML against 'undefined' and getting
                     false positives/negatives.
 
                     Removing the done() call in one of the tests resulted in the test passing correctly
-                    on first load, but would pass erroneously if the indicies of either load function were 
+                    on first load, but would pass erroneously if the indicies of either load function were
                     changed.
 
                     Adding the second loadFeed call into the callback of the first, and then calling done()

@@ -1,0 +1,28 @@
+{
+  "name": "project4_feedreader",
+  "version": "1.0.0",
+  "description": "\"An RSS feed reader test suite\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlkamp/fend-project4-feedreader-testing.git"
+  },
+  "author": "tlkamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlkamp/fend-project4-feedreader-testing/issues"
+  },
+  "homepage": "https://github.com/tlkamp/fend-project4-feedreader-testing#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "eslint": "^5.1.0",
+    "eslint-config-udacity": "^2.0.2",
+    "eslint-plugin-import": "^2.13.0",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0"
+  },
+  "dependencies": {}
+}
