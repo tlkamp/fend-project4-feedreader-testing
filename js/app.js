@@ -41,6 +41,10 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
+     if (id > allFeeds.length || id <= -1 || id === undefined) {
+         throw "ID must be valid.";
+     }
+     
      var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 

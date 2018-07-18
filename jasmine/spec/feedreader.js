@@ -139,4 +139,12 @@ $(function() {
             done();
         });
     });
+
+    describe('Loading Feeds', function(){
+        it('Requires a valid ID', function() {
+            expect(() => loadFeed(-1)).toThrow();
+            expect(() => loadFeed(99)).toThrow();
+            expect(() => loadFeed(undefined)).toThrow();
+        });
+    });
 }());
