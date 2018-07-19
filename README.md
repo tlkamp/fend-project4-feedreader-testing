@@ -64,7 +64,7 @@ To use the automated workflow defined in [`gulpfile.js`](gulpfile.js):
 5. Run the desired task:
     ```shell
     # for code style / format checking, run gulp
-    $ gulp lint
+    $ gulp
 
     # for browser auto-reloading when your javascript changes, run gulp run
     $ gulp run
