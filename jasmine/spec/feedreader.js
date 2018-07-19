@@ -60,26 +60,26 @@ $(function() {
 
     describe('Initial Entries', function() {
 
-        const feed_container = $('.feed');
+        const feedContainer = $('.feed');
 
         beforeEach(function(done){
             loadFeed(0, done);
         });
 
         it('there is at least 1 entry', function(done){
-            expect(feed_container.children().length).not.toBeLessThan(1);
+            expect(feedContainer.children().length).not.toBeLessThan(1);
             done();
         });
     });
 
     describe('New Feed Selection', function() {
 
-        let first_feed;
-        let second_feed;
+        let firstFeed;
+        let secondFeed;
 
         beforeEach(function(done){
             loadFeed(0, function () {
-                first_feed = document.querySelector('.feed').innerHTML;
+                firstFeed = document.querySelector('.feed').innerHTML;
 
                 /*
                     I tried several versions of this function.
@@ -96,14 +96,14 @@ $(function() {
                     in the callback of the second loadFeed call produces the correct behavior.
                 */
                 loadFeed(1, function() {
-                    second_feed = document.querySelector('.feed').innerHTML;
+                    secondFeed = document.querySelector('.feed').innerHTML;
                     done();
                 });
             });
         });
 
         it('should not result in the same content', function(done){
-            expect(first_feed).not.toEqual(second_feed);
+            expect(firstFeed).not.toEqual(secondFeed);
             done();
         });
     });
