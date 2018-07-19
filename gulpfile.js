@@ -2,7 +2,7 @@
 
 let gulp = require('gulp');
 let eslint = require('gulp-eslint');
-let browser_sync = require('browser-sync').create();
+let browserSync = require('browser-sync').create();
 
 const lint = () => {
     return gulp.src(['js/**/*.js'])
@@ -12,12 +12,12 @@ const lint = () => {
 };
 
 const reload = (done) => {
-    browser_sync.reload();
+    browserSync.reload();
     done();
-}
+};
 
-const init_srv = (done) => {
-    browser_sync.init({
+const initServer = (done) => {
+    browserSync.init({
         server: './'
     });
     done();
@@ -29,4 +29,4 @@ const watch = () => {
 };
 
 gulp.task('default', lint);
-gulp.task('run', gulp.series(lint, gulp.parallel(watch, init_srv)));
+gulp.task('run', gulp.series(lint, gulp.parallel(watch, initServer)));
