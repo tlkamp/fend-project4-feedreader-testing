@@ -3,7 +3,10 @@ This is a test suite for Udacity's [Feed Reader](https://github.com/udacity/fron
 
 ## Dependencies
   * [Jasmine 2.1.2](https://jasmine.github.io/) - for running the tests.
-  * An internet connection for the RSS Feeds.
+  * [GulpJS](https://gulpjs.com/) - for the automated workflow.
+    * [gulp-eslint](https://www.npmjs.com/package/gulp-eslint) - for linting with Gulp. 
+    * [browser-sync](https://browsersync.io/) - to load and auto-reload the feed reader and tests.
+* An internet connection for the RSS Feeds.
 
 ## Running the Tests
 To use the Feed Reader and run/view the tests:
