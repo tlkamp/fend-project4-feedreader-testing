@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/tlkamp/fend-project4-feedreader-testing#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.7",
     "eslint": "^5.1.0",
     "eslint-config-udacity": "^2.0.2",
     "eslint-plugin-import": "^2.13.0",
